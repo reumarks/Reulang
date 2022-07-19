@@ -1,0 +1,114 @@
+html{
+   box-sizing:border-box;
+   max-width: 1000px;
+   margin: auto;
+   width: 60%;
+}
+
+body {
+   padding: 20px;
+}
+
+body, * {
+   font-family: monospace ;
+   line-height: 1.4em;
+}
+
+a, a:hover, a:visited{ 
+   font-weight: bold;
+   font-style: italic;
+   color: #0400ff; 
+   border-bottom-color: rgba(128, 0, 128, 0.2); 
+   text-decoration: none;
+}
+
+p, li, ul, ol {
+   font-size: 14px;
+}
+
+h3, ul {
+   margin: 1px;
+}
+
+.title, .a{
+   font-size: 2em;
+   text-align: left;
+   margin: 1.5em 0;
+}
+
+hr {
+   height: 2px;
+   background-color: #ccc;
+   margin: 2em 1em;
+   border: none;
+}
+
+textarea {
+   width: 100%;
+   min-height: 150px;
+   height: fit-content;
+   padding: 12px 20px;
+   box-sizing: border-box;
+   border: 2px solid #ccc;
+   border-radius: 4px;
+   background-color: #f8f8f8;
+   resize: none;
+}
+
+.card {
+   border-radius: 10px;
+   box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
+   padding: 5px;
+   margin: 40px 0px;
+   justify-content: center;
+}
+
+.card > * {
+   margin: 5px;
+}
+
+.card-header {
+   display: flex;
+   margin: 15px 5px;
+}
+
+.input-group {
+   display: flex;
+   border-radius: 10px;
+   justify-content: center;
+}
+
+
+.input-group > * {
+   margin: 5px;
+}
+
+.input-group > button {
+   background-color: #48abe0;
+   color: white;
+   border: none;
+   padding: 5px;
+   font-size: 31px;
+   position: absolute;
+   align-self: center;
+   height: 50px;
+   width: 50px;
+   box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+   cursor: pointer;
+   transition: all 0.2s ease;
+   border-radius: 70%;
+   padding: 12px;
+   padding-left: 14px;
+}
+
+.input-group > button:hover {
+   background-color: #48abe0;
+   box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+   transform: translateY(-1px);
+}
+
+.input-group > button:active {
+   background-color: #48abe0;
+   box-shadow: 0 0 2px rgba(0,0,0,0.4);
+   transform: translateY(2px);
+}
