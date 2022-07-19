@@ -111,3 +111,7 @@ textarea {
    box-shadow: 0 0 2px rgba(0,0,0,0.4);
    transform: translateY(2px);
 }
+
+.scroll::-webkit-scrollbar {
+   display: none;
+ }

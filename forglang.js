@@ -1,5 +1,5 @@
 (function(self){
-   function compile(input, wrapWithEval, runInParentScope){
+   function compile(input){
      var output = [];
      if (!input){
        return "";

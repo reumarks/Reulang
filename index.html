@@ -16,7 +16,7 @@
          <h3 class="card-header">Enter your code below and press > to convert it into ForgLang</h3>
       </div>
       <div class="input-group">
-         <textarea id="input" value=""></textarea>
+         <textarea id="input" class="scroll" value=""></textarea>
          <button id="compile" type="text">
             <svg version="1.1" x="0px" y="0px" viewBox="0 0 492.432 492.432">
                <g fill="white">
@@ -50,7 +50,6 @@
       }
 
       $("compile").onclick = compile;
-      
       compile();
    </script>
 </body>
