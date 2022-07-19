@@ -15,4 +15,3 @@
      compile: compile
    };
  })(typeof(exports) === "undefined" ? window : exports);
- 
