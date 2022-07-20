@@ -1,4 +1,4 @@
-# ForgLangCompiler
+# Forglang Compiler
 
 ## FAQ
 
@@ -12,4 +12,3 @@
 
 ## How to run
 
-I have no idea yet.
