@@ -10,5 +10,6 @@
 #### If you wanted to make something cool in ForgLang, wouldn't it just be simpiler to just write the code in ForgLang?
 - No that sound's even worse than trying to create a compiler for it.
 
-## How to run
+#### NOTE
 
+- This is a work in progress / on hold project depending on when the last commit was made.
