@@ -136,7 +136,12 @@ h3, ul {
    padding-left: 10px;
 }
 
-.compile-button {
+.button-group {
+   display: flex;
+   flex-direction: row;
+}
+
+.round-button {
    background-color: var(--link-color);
    display: flex;
    align-self: center;
@@ -155,7 +160,7 @@ h3, ul {
    cursor: pointer;
 }
 
-.compile-button > svg {
+.round-button > svg {
    display: flex;
    align-self: center;
    padding-left: 3px;
@@ -163,18 +168,18 @@ h3, ul {
    height: 25px;
 }
 
-.compile-button > svg > path {
+.round-button > svg > path {
    fill: var(--editor-color);
 }
 
-.compile-button:hover {
+.round-button:hover {
    filter: brightness(105%);
    box-shadow: 0 2px 5px rgba(0,0,0,0.4);
    transform: translateY(-1px);
    cursor: pointer;
 }
 
-.compile-button:active {
+.round-button:active {
    filter: brightness(95%);
    box-shadow: 0 0 2px rgba(0,0,0,0.4);
    transform: translateY(2px);
@@ -244,4 +249,12 @@ h3, ul {
 
 .output {
    height: 40px;
+}
+
+.vertical-rule {
+   display: block; 
+   width: 2px; 
+   margin: 5px;
+   height:auto; 
+   background-color: var(--link-color);
 }

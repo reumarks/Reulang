@@ -2,37 +2,72 @@
 <html lang="en">
 
 <head>
-   <!-- Required meta tags -->
    <meta charset="UTF-8">
    <meta http-equiv="X-AU-compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@477;530&display=swap" rel="stylesheet">
-   <title>Forglang - Code like a frog</title>
-   <meta name="description" content="Forglang is a non-linear esoteric programming language.">
+   <title>Reulang</title>
+   <meta name="description" content="Reulang is a self-contained esoteric programming language where all data, instructions, inputs, and outputs are fully contained at runtime inside the same exicuting text file.">
    <meta charset="utf-8" />
    
    <link href="./style.css" rel="stylesheet">
+
+   <script type="module" src="/inputHandler.js"></script>
+   <script type="module" src="/themeHandler.js"></script>
+   <script type="module" src="/Helpers.js"></script>
+
+   <script type="module">      
+      import { Start, Stop, Step, Load } from '/CodeRunner.js';
+
+      window.startProgram = () => {
+         Start();
+      }
+
+      window.stopProgram = () => {
+         Stop();
+      }
+      
+      window.stepProgram = () => {
+         Step();
+      }
+      
+      window.loadProgram = () => {
+         Load(input.value);
+      }
+   </script>
    
 </head>
 
 <body>
    <div class="title-wrapper">
-      <h1 class="title">Forglang Compiler</h1>
-      <button type="button" class="theme-icon">
+      <h1 class="title">Reulang Scratchpad</h1>
+      <button type="button" class="theme-icon" onclick="toggleTheme()">
          <svg class="moon" viewBox="0 0 24 24"><path d="M21.4,13.7C20.6,13.9,19.8,14,19,14c-5,0-9-4-9-9c0-0.8,0.1-1.6,0.3-2.4c0.1-0.3,0-0.7-0.3-1 c-0.3-0.3-0.6-0.4-1-0.3C4.3,2.7,1,7.1,1,12c0,6.1,4.9,11,11,11c4.9,0,9.3-3.3,10.6-8.1c0.1-0.3,0-0.7-0.3-1 C22.1,13.7,21.7,13.6,21.4,13.7z"/></svg>
          <svg class="sun" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2"></path><path d="M12 21v2"></path><path d="M4.22 4.22l1.42 1.42"></path><path d="M18.36 18.36l1.42 1.42"></path><path d="M1 12h2"></path><path d="M21 12h2"></path><path d="M4.22 19.78l1.42-1.42"></path><path d="M18.36 5.64l1.42-1.42"></path></g></svg>
       </button>
    </div>
 
-   <p><a href="https://github.com/expitau-dev/Forglang">Forglang</a> is an esoteric programming language whose distinguishing feature is non-linear code execution. Froglang was created by <a href="https://github.com/expitau-dev">expitau-dev</a>, who is a friend of mine, and I created this converter to assist me in creating a project using it.</p>
+   <p><a href="https://github.com/reumarks/Reulang">Reulang</a> is a self-contained esoteric programming language where all data, instructions, inputs, and outputs are fully contained at runtime inside the same exicuting text file.</p>
 
    <div class="card">
       <div class="card-header">
-         <h3 class="editor-label">Enter your code below and press > to convert it into ForgLang</h3>
-         <button id="compile" class="compile-button" type="text" onclick="compile()">
-            <svg version="1.1" x="0px" y="0px" viewBox="0 0 492.432 492.432"><path fill="white" d="M142.238,492.432c-9.79,0-19.588-3.736-27.05-11.209c-14.945-14.934-14.945-39.162,0-54.098l180.9-180.909l-180.9-180.91c-14.945-14.935-14.945-39.163,0-54.098c14.926-14.944,39.172-14.944,54.098,0l207.96,207.958c14.943,14.935,14.943,39.164,0,54.1l-207.96,207.957C161.824,488.697,152.026,492.432,142.238,492.432z"/>
-            </svg>
-         </button>
+         <h3 class="editor-label">Code Scratchpad</h3>
+         <div class="button-group">
+            <button class="startButton round-button" type="text" onclick="stepProgram()">
+               <svg viewBox="1 1 15 15"><path d="m9.77 12.11 4.012-2.953a.647.647 0 0 0 0-1.114L9.771 5.09a.644.644 0 0 0-.971.557V6.65H2v3.9h6.8v1.003c0 .505.545.808.97.557z"/></svg>
+            </button>
+            <button class="stopButton round-button" type="text" style="display:none;" onclick="stopProgram()">
+               <svg viewBox="1.5 1 14 14"><path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z"/></svg>
+            </button>
+            <button class="startButton round-button" type="text" onclick="startProgram()">
+               <svg viewBox="0.8 1 14 14"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/></svg>
+            </button>
+            <div class="vertical-rule"></div>
+            <button class="round-button" type="text" onclick="loadProgram()">
+               <svg viewBox="2 0 14 14"><path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/></svg>
+            </button>
+         </svg>
+         </div>
       </div>
       <div class="input-group">
          <p><textarea id="input-line-counter" class="input line-counter" readonly spellcheck="false">1</textarea><textarea id="input" class="input editor" overflow-wrap spellcheck="false"></textarea></p>
@@ -43,101 +78,11 @@
    <h3>Resources</h3>
 
    <ul>
-      <li>View Compiler on <a href="https://github.com/reumarks/ForgLangCompiler">GitHub</a></li>
-      <li>View Forglang on <a href="https://github.com/expitau-dev/Forglang">GitHub</a></li>
+      <li>View Reulang on <a href="https://github.com/expitau-dev/Forglang">GitHub</a></li>
    </ul>
-
-   <p>Created by <a href="https://github.com/reumarks">reumarks</a></p>
-
-   <script src="forglang.js"></script>
-   <script>      
-      var input = document.getElementById("input");
-      var inputLines = document.getElementById("input-line-counter");
-      var output = document.getElementById("output");
-      var complieButton = document.getElementById("compile");
-
-      input.addEventListener('scroll', () => {
-         inputLines.scrollTop = input.scrollTop;
-         inputLines.scrollLeft = input.scrollLeft;
-      });
-
-      input.addEventListener('keydown', function(e) {
-         if (e.key == 'Tab') {
-            e.preventDefault();
-            var start = this.selectionStart;
-            var end = this.selectionEnd;
-            this.value = this.value.substring(0, start) + "\t" + this.value.substring(end);
-            this.selectionStart = this.selectionEnd = start + 1;
-            handleInput();
-         }
-      });
-
-      input.addEventListener('input', () => {
-         handleInput();
-      });
-
-      function handleInput(e){
-         let oldlineHeight = input.style.lineHeight;
-         input.style.lineHeight = 10;
-         input.style.height = "1px";
-         let lineNumber = (input.scrollHeight - 20) / 140;
-         input.style.lineHeight = oldlineHeight;
-         let newHeight = Math.max(input.scrollHeight + 5, 120);
-         input.style.height  = newHeight + "px";
-         inputLines.style.height  = newHeight + "px";
-         let lineNumbers = Array.from({length: lineNumber}, (_, i) => i + 1);
-         inputLines.value = lineNumbers.join('\n');
-      }
-
-      function compile() {
-         output.value = forglang.compile(input.value);
-         output.style.height = "1px";
-         output.style.height = output.scrollHeight + 5 + "px";
-      }
-
-      compile();
-   </script>
-
-   <script>
-      function isColorModeSet(){
-         return localStorage.getItem("light-mode") ?? false;
-      }
-
-      function isDarkModeDefault(){
-         return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      }
-
-      function toggleRootClass(){
-         document.querySelector(":root").classList.toggle("light");
-      }
-
-      function setColorModeStorage(){
-         if(!isColorModeSet()){
-            if (isDarkModeDefault()) {
-               localStorage.setItem("light-mode", "dark");
-            } else {
-               localStorage.setItem("light-mode", "light");
-            }
-         }else if(localStorage["light-mode"] == "light"){
-            localStorage.setItem("light-mode", "dark");
-         }else{
-            localStorage.setItem("light-mode", "light");
-         }
-      }
-
-      if (isColorModeSet()){
-         if(localStorage["light-mode"] == "light"){
-            toggleRootClass();
-         }
-      }else if(!isDarkModeDefault){
-         toggleRootClass();
-      }
-
-      document.querySelector(".theme-icon").addEventListener("click", () => {
-         setColorModeStorage();
-         toggleRootClass();
-      });
-   </script>
+   <ul>
+      <li>Created by <a href="https://github.com/reumarks">Reumarks</a></li>
+   </ul>
 </body>
 
 </html>
