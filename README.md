@@ -1,15 +1,15 @@
-# Forglang Compiler
+# Reulang
 
-## FAQ
+### Overview
 
-#### What is ForgLang?
-- Forglang is an esoteric programming language (similar to brainfuck), whose distinguishing feature is non-linear code execution.
-- It was created by @expitau-dev who is a friend of mine, and this project was created as a result of me trying to make something cool out of it, even though that should not be possible.
-- You can view Forglang here: https://github.com/expitau-dev/Forglang
+Reulang is a self-contained esoteric programming language where all data, instructions, inputs, and outputs are fully contained at runtime inside the same exicuting text file.
 
-#### If you wanted to make something cool in ForgLang, wouldn't it just be simpiler to just write the code in ForgLang?
-- No that sound's even worse than trying to create a compiler for it.
+### Commands
 
-#### NOTE
-
-- This is a work in progress / on hold project depending on when the last commit was made.
+`P` - Pushes copy of the following symbol to end of string
+`R` - Remove the next instance of the following symbol
+`T` - Toggle case of the following symbol, if it is a letter
+`I` - Increment the following symbol, if it is a number
+`D` - Decrement the following symbol, if it is a number
+`J` - Jump to the next instance of the following symbol
+`E` - End Program
