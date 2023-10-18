@@ -6,10 +6,10 @@ Reulang is a self-contained esoteric programming language where all data, instru
 
 ### Commands
 
-`P` - Pushes copy of the following symbol to end of string
-`R` - Remove the next instance of the following symbol
-`T` - Toggle case of the following symbol, if it is a letter
-`I` - Increment the following symbol, if it is a number
-`D` - Decrement the following symbol, if it is a number
-`J` - Jump to the next instance of the following symbol
-`E` - End Program
+- `P` - Pushes copy of the following symbol to end of string
+- `R` - Remove the next instance of the following symbol
+- `T` - Toggle case of the following symbol, if it is a letter
+- `I` - Increment the following symbol, if it is a number
+- `D` - Decrement the following symbol, if it is a number
+- `J` - Jump to the next instance of the following symbol
+- `E` - End Program
