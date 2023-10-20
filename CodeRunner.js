@@ -8,7 +8,8 @@ export function Load(input){
 	stopProgram();
 
 	// Remove any empty new lines
-	let program = input.replace(/\n/g, '');
+	let program = input.replace(/\n|\t| /gm, '');
+	
 
 	setProgram(program);
 }
@@ -58,7 +59,7 @@ export function Step(){
 				break;
 			}
 
-			program = ((nextSymbol + 1) % 10) + program.substring(2) + currentSymbol;
+			program = ((parseInt(nextSymbol) + 1) % 10) + program.substring(2) + currentSymbol;
 			break;
 
 		case 'D': // Decrement the following symbol, if it is a number
@@ -67,7 +68,7 @@ export function Step(){
 				break;
 			}
 
-			program = (nextSymbol === '0' ? '9' : (nextSymbol - 1)) + program.substring(2) + currentSymbol;
+			program = (parseInt(nextSymbol) === 0 ? 9 : (parseInt(nextSymbol) - 1)) + program.substring(2) + currentSymbol;
 			break;
 
 		case 'J': // Jump to the next instance of the following symbol.

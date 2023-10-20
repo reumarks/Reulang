@@ -1,6 +1,36 @@
+import { Start, Stop, Step, Load } from '/CodeRunner.js';
+import { ToggleTheme } from './themeHandler.js';
+
 const input = document.getElementById("input");
 const inputLines = document.getElementById("input-line-counter");
+const stepProgramButton = document.getElementById('step-program-button');
+const startProgramButton = document.getElementById('start-program-button');
+const stopProgramButton = document.getElementById('stop-program-button');
+const loadProgramButton = document.getElementById('load-program-button');
+const toggleThemeButton = document.getElementById('toggle-theme-button');
 
+toggleThemeButton.addEventListener('click', () => {
+   ToggleTheme();
+});
+
+startProgramButton.addEventListener('click', () => {
+   Start();
+});
+
+
+stopProgramButton.addEventListener('click', () => {
+   Stop();
+});
+
+
+stepProgramButton.addEventListener('click', () => {
+   Step();
+});
+
+
+loadProgramButton.addEventListener('click', () => {
+   Load(input.value);
+});
 input.addEventListener('scroll', () => {
    inputLines.scrollTop = input.scrollTop;
    inputLines.scrollLeft = input.scrollLeft;

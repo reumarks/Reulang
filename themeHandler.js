@@ -1,3 +1,8 @@
+export function ToggleTheme() {
+   setColorModeStorage();
+   toggleRootClass();
+}
+
 function isColorModeSet(){
    return localStorage.getItem("light-mode") ?? false;
 }
@@ -35,8 +40,3 @@ function updateTheme(){
 }
 
 updateTheme();
-
-window.toggleTheme = () => {
-   setColorModeStorage();
-   toggleRootClass();
-};
